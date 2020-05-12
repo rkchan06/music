@@ -24,24 +24,46 @@
 
 		<!-- Header -->
 			<header id="header" class="alt">
-				<div class="logo"><a href="index.html">Toronto Youth Music Fund<span></span></a></div>
-				<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons" style="margin-top:12px;">menu</i></a>
+				<a href="index.html" style="margin-right:20px; font-size:20px; margin-top:3px;">TYMF<span></span></a>
+				<a href="#" data-target="slide-out" class="sidenav-trigger left"><i class="material-icons" style="margin-top:12px; margin-left:10px; ">menu</i></a>
 			</header>
 
 			<ul id="slide-out" class="sidenav">
-			    <li style="margin-top:60px;"><a onmouseover="drop()" onmouseout="close()" href="Programs.html" style="font-size: 18px;">Our programs<i class="material-icons"></i></a></li>
-
-			    <li><a onclick="drop1()" href="events.html" style="font-size: 18px;">Events<i class="material-icons">event</i></a></li>
-			    <li><a onclick="drop2()" href="donations.html" style="font-size: 18px;">Donations<i class="material-icons">attach_money</i></a></li>
+			    <li style="margin-top:60px;"><a onmouseover="drop()" onmouseout="close()" href="programs.html" style="font-size: 18px;">Our programs<i class="material-icons">account_balance</i></a></li>
+			    <li><a onclick="drop1()" href="events.html" style="font-size: 18px;">Events in the GTA<i class="material-icons">event</i></a></li>
 			    <li><a href="#!" style="font-size: 18px;">History of Music<i class="material-icons">history</i></a></li>
+			    <li><a onclick="drop2()" href="donations.html" style="font-size: 18px;">Donate Now<i class="material-icons">attach_money</i></a></li>
 			  </ul>
 
-			<img src="form.png" style="margin-top:100px; margin-left:800px;">
-						<h1 style="margin-left:200px; margin-top:-100px">Donate Now!</h1>
-			<h6 style='margin-top:-80px; margin-left:800px'>Donation amount:</h6>
-			<img src="musicgif/barline1.png" style="margin-left:800px; margin-top:-80px; margin-bottom:-80px;width:30%;">
-			<button style='margin-top:10px; margin-left:800px;'>$1</button><button>$5</button><button>$10</button><button>$20</button>
-			<img src="paypal.jpg" style="margin-top:30px; margin-left:850px;">
+			<center><h1 style="margin-top:100px; color:white;">Donate Now!</h1></center>
+			<center><div id="paypal-button-container"></div></center>
+				<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=CAD" data-sdk-integration-source="button-factory"></script>
+				<script>
+				  paypal.Buttons({
+				      style: {
+				          shape: 'pill',
+				          color: 'gold',
+				          layout: 'vertical',
+				          label: 'paypal',
+				          
+				      },
+				      createOrder: function(data, actions) {
+				          return actions.order.create({
+				              purchase_units: [{
+				                  amount: {
+				                      value: '1'
+				                  }
+				              }]
+				          });
+				      },
+				      onApprove: function(data, actions) {
+				          return actions.order.capture().then(function(details) {
+				              alert('Transaction completed by ' + details.payer.name.given_name + '!');
+				          });
+				      }
+				  }).render('#paypal-button-container');
+				</script>
+
 	</body>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -62,3 +84,4 @@
     
 		</script>
 </html>
+
