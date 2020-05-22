@@ -18,57 +18,273 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 		<script src="myjava.js"></script>
+
 	</head>
-	<style>
-		* {
-  box-sizing: border-box;
-	}
 
-	.column {
-	  float: left;
-	  width: 33.33%;
-	  padding: 5px;
-	}
 
-	/* Clearfix (clear floats) */
-	.row::after {
-	  content: "";
-	  clear: both;
-	  display: table;
-	}
-	</style>
 	<body class="subpage">
 
 		<!-- Header -->
 			<header id="header" class="alt">
-				<div class="logo"><a href="index.html" style="color:black;">Toronto Youth Music Fund<span></span></a></div>
-				<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons" style="margin-top:12px; color:black;">menu</i></a>
+				<a href="index.html" style="margin-right:20px; font-size:20px; margin-top:3px;">TYMF<span></span></a>
+				<a href="#" data-target="slide-out" class="sidenav-trigger left"><i class="material-icons" style="margin-top:12px; margin-left:10px; ">menu</i></a>
 			</header>
 
 			<ul id="slide-out" class="sidenav">
-			    <li style="margin-top:60px;"><a onmouseover="drop()" onmouseout="close()" href="programs.html" style="font-size: 18px;">Our programs<i class="material-icons"></i></a></li>
-
-			    <li><a onclick="drop1()" href="events.html" style="font-size: 18px;">Events<i class="material-icons">event</i></a></li>
-			    <li><a onclick="drop2()" href="donations.html" style="font-size: 18px;">Donations<i class="material-icons">attach_money</i></a></li>
+			    <li style="margin-top:60px;"><a href="programs.html" style="font-size: 18px;">Programs<i class="material-icons">account_balance</i></a></li>
+			    <li><a onclick="drop1()" href="events.html" style="font-size: 18px;">Events in the GTA<i class="material-icons">event</i></a></li>
 			    <li><a href="#!" style="font-size: 18px;">History of Music<i class="material-icons">history</i></a></li>
+			    <li><a onclick="drop2()" href="donations.html" style="font-size: 18px;">Donate Now<i class="material-icons">attach_money</i></a></li>
 			  </ul>
 
-			  <center><h1>Programs around the GTA</h1></center>
+			<div id="modal" class="modal">
+		      <div class="modal-content">
+		      	<h1 style="font-size:30px;">National Music Camp <a href="#!" class="modal-action modal-close" style="margin-left:415px;"><i class="material-icons">close</i></a></h1>
+		      	<p style="font-size:16px; margin-top:-10px;">For more information, click <a href="https://www.nationalmusiccamp.com/">here</a></p>
+		      	<p>National Music Camp is an overnight camp that prides itself on the finest facilities and programming, insuring the ultimate experience for every camper in our care. Featuring:</p>
+		      	<p> - 10 large rehearsal halls <br> - 25 ensemble rehearsal spaces <br> - State-of-the-art theatre/concert hall <br> -Scenic dining hall overlooking Lake Couchiching <br> - Fully-equipped health centre, with Doctor and two health care staff <br> - Renovated camper cabins: built-in bunk beds, spacious, washrooms and showers, electricity</p>
+		      	<p>The summer camp has an enrollment fee of $900+tax for early bird registration (before Feb 28) or $950+tax for regular registration (after Mar 1). The summer camp this year has been cancelled. No enrollment for 2020 session<p>
+		      	<table>
+		      		<tr><td>Junior Division (Grades 3-8)</td><td>Senior Division (Grades 9-12)</td></tr>
+		      		<tr><td>Saturday Aug 15 - Saturday Aug 22</td><td>Sunday Aug 23 - Sunday Aug 30</td></tr>
+		      	</table>
+		      	<p>Fee is inclusive of full camp program, 3 meals per day and snacks. HST extra.</p>
+		      	<p>6726 Rama Rd, Washago ON, L0K 2B0, Canada<center><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d22694.3065937786!2d-79.354492!3d44.683102000000005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d2aa7ac2d8f5b07%3A0x2fc795e135b20336!2s6726%20Rama%20Rd%2C%20Washago%2C%20ON%20L0K%202B0%2C%20Canada!5e0!3m2!1sen!2sus!4v1590104697124!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></center></p>
+		      </div>
+		    </div>
 
-			  <div class="row" style="margin-top:50px;">
-			  <div class="column">
-			    <img src="tree.jpg" alt="Snow" style="width:100%"><button>Learn More</button><p>This is where the captions of programs would go</p>
-			  </div>
-			  <div class="column">
-			    <img src="autumn.jpg" alt="Forest" style="width:100%"><button>Learn More</button><p>This is where the captions of programs would go</p>
-			  </div>
-			  <div class="column">
-			    <img src="spring.jpg" alt="Mountains" style="width:100%"><button>Learn More</button><p>This is where the captions of programs would go</p>
-			  </div>
-			</div>
+		    <div id="modal1" class="modal">
+		      <div class="modal-content">
+		      	<h1 style="font-size:30px;">Toronto Music Camp <a href="#!" class="modal-action modal-close" style="margin-left:420px;"><i class="material-icons">close</i></a></h1>
+		      	<p style="font-size:16px; margin-top:-10px;">For more information, click <a href="https://torontomusiccamp.com/">here</a></p>
+		      	<p>Toronto Music Camp (TMC) is a day camp that teaches kids how to work together as musicians while recording and performing the style music they love. It is an escape from the isolation of private music lessons over the school year, where kids come around the world to attend TMC to develop musicianship and have fun. Unlike other March Break and Summer camps in Toronto, their groups are small so all campers receive the individualized attention they deserve while rehearsing with their band or troupe.</p>
+		      	<p>The summer camp has an enrollment fee of $499+tax for registration plus an additional discount on each week if two or more sessions are chosen</p><p> Sessions running: July 6 -10, 2020, July 13-17, 2020, July 20-24, 2020, July 27 - 31, 2020, Aug 10-14, 2020, Aug 17 -21, 2020</p>
+		      	<p>822 Danforth Ave, Toronto ON, M4J 1L6, Canada<center><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11541.907393249725!2d-79.341198!3d43.679849!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cc84219f86f7%3A0xc8151efcf770140c!2s822%20Danforth%20Ave%2C%20Toronto%2C%20ON%20M4J%201L6%2C%20Canada!5e0!3m2!1sen!2sus!4v1590105426614!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></center></p>
+		      </div>
+		    </div>
+
+		    <div id="modal2" class="modal">
+		      <div class="modal-content">
+		      	<h1 style="font-size:30px;">Leahy Music Camp <a href="#!" class="modal-action modal-close" style="margin-left:445px;"><i class="material-icons">close</i></a></h1>
+		      	<p style="font-size:16px; margin-top:-10px;">For more information, click <a href="https://leahymusiccamp.ca/">here</a></p>
+		      	<p>Leahy Music Camp is an overnight camp that has gained a reputation for being a major source of inspiration and instruction for people of all ages and ability. It offers classes in fiddle, piano, step-dancing, singing, guitar, bass, drums, mandolin, accordion, music technology, songwriting, composing, and more. Some features include:</p>
+		      	<p> - Rooms at LCS are dormitory style – each is spacious with 2 single beds, 2 dressers, and 2 desks. <br> - Meals are cafeteria style and served in the LCS Dining Hall overlooking Katchewanooka Lake. There are many food choices at each meal and special dietary requests CAN be made (ie. diabetic, gluten-free, etc.). <br> - Variety of different programs to choose from</p>
+		      	<p>The summer camp this year has been cancelled. No enrollment for 2020 session</p>
+		      	<table>
+		      		<tr><td>Child</td><td>Youth</td><td>Adult</td></tr>
+		      		<tr><td>12 years or younger</td><td>13-17 year olds</td><td>18 years or older</td></tr>
+		      	</table>
+		      	<p>Fee is inclusive of full camp program, 3 meals per day and snacks. HST extra.</p>
+		      	<p>4391 County Rd 29, Lakefield ON, K0L 2H0, Canada<center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.6781149287494!2d-78.2685267844252!3d44.439764579102146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cd4b584ade7c819%3A0x55ca1ae4bafa136c!2s4391%20County%20Rd%2029%2C%20Lakefield%2C%20ON%20K0L%202H0%2C%20Canada!5e0!3m2!1sen!2sus!4v1590106222401!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></center></p>
+		      </div>
+		    </div>
+
+		    <div id="modal3" class="modal">
+		      <div class="modal-content">
+		      	<h1 style="font-size:30px;">Cosmo Music Camps<a href="#!" class="modal-action modal-close" style="margin-left:438px;"><i class="material-icons">close</i></a></h1>
+		      	<p style="font-size:16px; margin-top:-10px;">For more information, click <a href="https://cosmomusic.ca/school-of-music/camps">here</a></p>
+		      	<p>Cosmo Music Camp is a day camp that has a variety of music camps for students of all ages. Their camps are all led by professional musicians and are held in our fully-equipped music studios and performance halls. This years camp is the instrumental discovery camp which is designed for children to explore various instruments before committing to one. Over the first week, campers get to play many instruments and work with our instructors to choose their favourites for week two. In week two, they sharpen their skills to prepare for their debut performance on stage! This camp includes outdoor time. </p>
+		      	<p>The summer camp runs for 2 weeks long and has an enrollment fee of $795+tax. Early drop-off available from 8am to 9am for $60 per session and extended care is available from 4pm to 5:30pm for $120 per session.</p>
+		      	<table>
+		      		<tr><td>Group A</td><td>Group B</td><td>Group C</td></tr>
+		      		<tr><td>5-6 year old</td><td>7-9 year old</td><td>10-12 year old</td></tr>
+		      		<tr><td>July 6 - 17, 2020 and August 10 - 21, 2020</td><td>July 6 - 17, 2020 and August 10 - 21, 2020</td><td>July 6 - 17, 2020 and August 10 - 21, 2020</td></tr>
+		      	</table>
+		      	<p>Fee is inclusive of full day, 2 week, camp program. No food provided. HST extra.</p>
+		      	<p>10 Via Renzo Dr, Richmond Hill ON, L4S 0B6, Canada<center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2875.319601796498!2d-79.39515568449458!3d43.89064697911395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b2ab9c72e78d7%3A0x1a0abdcfdcef020!2sCosmo%20Music%20-%20The%20Musical%20Instrument%20Superstore*21!5e0!3m2!1sen!2sca!4v1590107347987!5m2!1sen!2sca" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></center></p>
+		      </div>
+		    </div>
+
+		    <div id="modal4" class="modal">
+		      <div class="modal-content">
+		      	<h1 style="font-size:30px;">RCM Music Camps<a href="#!" class="modal-action modal-close" style="margin-left:458px;"><i class="material-icons">close</i></a></h1>
+		      	<p style="font-size:16px; margin-top:-10px;">For more information, click <a href="https://www.rcmusic.com/courses/camps-summer-camps#panel-277">here</a></p>
+		      	<p>RCM music camp is day camp that has a variety of music camps for students of all ages. Their camps are all led by professional musicians and are held in our fully-equipped music studios and performance halls. They have camps for every genre of music with names for their camps such as instrument exploration, summer string institute, RCS band camp, summer musical! Anne of Green Gables, the Gruffalo, what the ladybird heard, music camp en français, and high school vocal performance intensive.</p>
+		      	<p>Their summer camps range from 1 week to 2 weeks long, 9:00 to 4:00. Early Drop-Off (8:00am) and Extended Care (4:00-6:00pm) are available at an additional cost. Enrollment costs differ for each camp and age groups. Please visit their <a href="https://www.rcmusic.com/courses/camps-summer-camps#panel-277">website</a> for more information</p>
+		      	<p>Their fee is inclusive of full day camp program and a camper t-shirt. No food provided. HST extra.</p>
+		      	<p>273 Bloor St W, Toronto ON, M5S 1W2, Canada<center><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11544.234875735252!2d-79.3961666!3d43.6677486!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf2b35922cb9463f0!2sThe%20Royal%20Conservatory%20of%20Music!5e0!3m2!1sen!2sca!4v1590108372231!5m2!1sen!2sca" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></center></p>
+		      </div>
+		    </div>
+
+		    <div id="modal5" class="modal">
+		      <div class="modal-content">
+		      	<h1 style="font-size:30px;">TSSP Camps<a href="#!" class="modal-action modal-close" style="margin-left:478px;"><i class="material-icons">close</i></a></h1>
+		      	<p style="font-size:16px; margin-top:-10px;">For more information, click <a href="https://www.torontoschoolforstrings.com/">here</a></p>
+		      	<p>Toronto School for Strings and Piano camps are day camps for ages 4-12 that emphasize the quality of the learning environment and foster artistic growth among all their students. Instruments taught include violin, viola, cello, bass, piano, guitar, ukulele and electric bass. They encourage their students to take advantage of enriching opportunities such as rehearsing with a professional accompanist or playing with small ensembles or orchestra. TSSP offers a fun and creative approach to theory in private lessons or small groups. They also encourage the implementation of music technology. The core of their instruction is classical by nature, but they also include jazz and improvisation.</p>
+		      	<p>Their summer camps are 1 week long, with the option of half day or full day. A full day is $485+tax and a half day is $295+tax</p>
+		      	<p>Their fee is inclusive of a half or full day camp program. No food provided. HST extra.</p>
+		      	<p>1585 Yonge St, Toronto ON, M4T 1Z9, Canada<center><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11840.692359158496!2d-79.41340714123822!3d43.69309573137812!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x202bf5e9bbba20bf!2sToronto%20School%20For%20Strings%20and%20Piano!5e0!3m2!1sen!2sca!4v1590109192061!5m2!1sen!2sca" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></center></p>
+		      </div>
+		    </div>
+			  
+			  
+
+
+		<!-- Nav -->
+		
+		<!-- Banner -->
+		<!--
+			To use a video as your background, set data-video to the name of your video without
+			its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+			formats to work correctly.
+		-->
+				<section id="banner" style="margin-top:-500px;">
+					<div class="inner">
+						<div id="home" class="animated1 slideInDown">
+
+							<h1 style="margin-top:450px;">Programs around Toronto</h1>
+							<center><img src="bluemusic.png" style="width:75px; height: 75px;"></center>
+
+						</div>
+					</div>
+				</section>
+
+					
+					<div class="row" style="margin-top: 20px; margin-left: -29px;">
+						<div class="inner" style="">
+							<div id="home" class="animated11 fadeInLeft">
+								    <div class="col s4 m4">
+								      <div class="card">
+								        <div class="card-image">
+								          <img src="band1.jpg">
+								          <span class="card-title"><img src="nmc.png" style="width:30%; height: 30%;"></span>
+								          <a class="btn-floating halfway-fab waves-effect waves-light blue" onclick="modal()"><i class="material-icons">add</i></a>
+								        </div>
+								        <div class="card-content">
+								          <h1 style="color: black; font-size: 25px; margin-top: -3px; margin-right: 140px !important; margin-left: -10px !important;">National Music Camp</h1>
+								          <p style="color: black; font-size: 16px;"> National Music Camp prides itself on the finest facilities and programming, insuring the ultimate experience for every camper in our care. From beginner to advanced musicians, we have a place for you.</p>
+								        </div>
+								      </div>
+								    </div>
+							</div>
+						</div>
+						<div class="inner" style="margin-top:-549px;">
+							<div id="home" class="animated11 zoomInDown">
+								    <div class="col s4 offset-s4">
+								      <div class="card">
+								        <div class="card-image">
+								          <img src="tmc11.jpg" style="height: 120% !important">
+								          <span class="card-title"><img src="tmc.png" style="width: 200%; height: 200%; margin-bottom:-70px !important; margin-left: -65px;"></span>
+								          <a class="btn-floating halfway-fab waves-effect waves-light blue" onclick="modal1()"><i class="material-icons">add</i></a>
+								        </div>
+								        <div class="card-content">
+								          <h1 style="color: black; font-size: 25px; margin-top: -3px; margin-right: 140px !important; margin-left: -10px !important;">Toronto Music Camp</h1>
+								          <p style="color: black; font-size: 16px;"> Toronto Music Camp is a unique summer music camp in where kids ages 8-16 come from around the world to play in a rock band, produce a music video, and rub elbows with some of this city’s most successful musicians. </p>
+								        </div>
+								      </div>
+								    </div>
+							</div>
+						</div>
+						<div class="inner" style="margin-top:-549px;">
+							<div id="home" class="animated11 fadeInRight">
+								    <div class="col s4 offset-s8">
+								      <div class="card">
+								        <div class="card-image">
+								          <img src="leahy1.png">
+								          <span class="card-title"><img src="leahy.png" style="width:30%; height: 30%; margin-bottom:-20px; "></span>
+								          <a class="btn-floating halfway-fab waves-effect waves-light blue" onclick="modal2()"><i class="material-icons">add</i></a>
+								        </div>
+								        <div class="card-content">
+								          <h1 style="color: black; font-size: 25px; margin-top: -3px; margin-right: 140px !important; margin-left: -10px !important;">Leahy Music Camp</h1>
+								          <p style="color: black; font-size: 16px;"> Leahy Music Camp has gained a reputation for being a major source of inspiration and instruction for people of all ages and ability. It offers classes in fiddle, piano, step-dancing, singing, guitar, and more.</p>
+								        </div>
+								      </div>
+								    </div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row" style="margin-left: -29px;">
+						<div class="inner" style="">
+							<div id="homer" class="animated12 fadeInLeft2">
+								    <div class="col s4 m4">
+								      <div class="card">
+								        <div class="card-image">
+								          <img src="cosmo.png">
+								          <span class="card-title"><img src="cosmo1.png" style="width:60%; height: 60%;"></span>
+								          <a class="btn-floating halfway-fab waves-effect waves-light blue" onclick="modal3()"><i class="material-icons">add</i></a>
+								        </div>
+								        <div class="card-content">
+								          <h1 style="color: black; font-size: 25px; margin-top: -3px; margin-right: 140px !important; margin-left: -10px !important;">Cosmo Music Camps</h1>
+								          <p style="color: black; font-size: 16px;"> Cosmo School of Music is proud to present an exciting line-up of music camps for students of all ages. Camps are all led by professional musicians. Join us for a unique musical March Break, Summer Camp, and PA Day experience for your children!</p>
+								        </div>
+								      </div>
+								    </div>
+							</div>
+						</div>
+						<div class="inner" style="margin-top:-574px;">
+							<div id="homer1" class="animated12 zoomInUp">
+								    <div class="col s4 offset-s4">
+								      <div class="card">
+								        <div class="card-image">
+								          <img src="rcm1.png">
+								          <span class="card-title"><img src="rcm.png" style="width:80%; height: 80%; margin-left:-35px; margin-bottom: -30px;"></span>
+								          <a class="btn-floating halfway-fab waves-effect waves-light blue" onclick="modal4()"><i class="material-icons">add</i></a>
+								        </div>
+								        <div class="card-content">
+								          <h1 style="color: black; font-size: 25px; margin-top: -3px; margin-right: 140px !important; margin-left: -10px !important;">RCM Music Camps</h1>
+								          <p style="color: black; font-size: 16px;"> The Royal Conservatory School is the place to be for exciting camps and activities in Toronto. Neuroscientists have demonstrated that learning to play an instrument or learning to sing, leads to positive changes in young people’s brains.</p>
+								        </div>
+								      </div>
+								    </div>
+							</div>
+						</div>
+						<div class="inner" style="margin-top:-574px;">
+							<div id="homer2" class="animated12 fadeInRight2">
+								    <div class="col s4 offset-s8">
+								      <div class="card">
+								        <div class="card-image">
+								          <img src="tssp1.png">
+								          <span class="card-title"><img src="tssp.png" style="width:30%; height: 30%;"></span>
+								          <a class="btn-floating halfway-fab waves-effect waves-light blue" onclick="modal5()"><i class="material-icons">add</i></a>
+								        </div>
+								        <div class="card-content">
+								          <h1 style="color: black; font-size: 25px; margin-top: -3px; margin-right: 140px !important; margin-left: -10px !important;">TSSP Camps</h1>
+								          <p style="color: black; font-size: 16px;">The Toronto school for strings camps are designed for children age 4-12 and offers a multi-faceted and enriched program. Teaching Staff are experts in their field. Instruments taught include violin, viola, cello, bass, piano, guitar, ukulele and electric bass.</p>
+								        </div>
+								      </div>
+								    </div>
+							</div>
+						</div>
+					</div>
+
+
+
+			<footer id="footer" class="wrapper">
+
+				<div class="inner">
+						<section>
+							<div class="box">
+								<div class="content">
+									<h2 class="align-center">Get in Touch</h2>
+									<hr />
+										<div class="field half first">
+											<label for="name">Name</label>
+											<input name="name" id="name" type="text" placeholder="Name" class="validate" required="" aria-required="true">
+											<span class="helper-text" data-error="Cannot be Empty" data-success=""></span>
+										</div>
+										<div class="field half">
+											<label for="email" style="margin-top:20px;">Email</label>
+											<input name="email" id="email" type="email" placeholder="Email" class="validate" required="" aria-required="true">
+											<span class="helper-text" data-error="Cannot be Empty/Not a valid Email" data-success=""></span>
+										</div>
+										<div class="field">
+											<label for="message" style="margin-top:20px;">Message</label>
+											<textarea name="message" id="message" rows="6" placeholder="Message" class="validate" required="" aria-required="true"></textarea>
+										</div>
+										<center><button onclick="emailme()" class="button special" style="margin-top:20px;">Send Message</button></center>
+								</div>
+							</div>	
+
+						</section>
+				</div>
+
+
+			</footer>
+            
 
 		<!-- Scripts -->
-						<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
@@ -78,12 +294,89 @@
 		<script>
 
 			$(document).ready(function(){
-			    $('.sidenav').sidenav();
+			$('.sidenav').sidenav();
 			});
 
 			$(window).scroll(function (event) {
 			    var scroll = $(window).scrollTop();
 			});
+
+			$(document).ready(function () {
+			    var val = $.trim($("textarea").val());
+			});
+
+			function checkName(){
+			    // Make AJAX request
+			    var name = document.getElementById("name").value
+				var email = document.getElementById("email").value
+				var message = document.getElementById("message").value
+			    
+			setTimeout(checkName, 10);
+			    
+			    if(name !== null && name !== '') {
+	             	document.getElementById("name").style.borderColor = "green";
+	              	return;
+	            }
+
+	            if(email !== null && email !== '') {
+	             	document.getElementById("email").style.borderColor = "green";
+	              	return;
+	            }
+
+	            
+			}
+			checkName();
+
+			function emailme() {
+				var name = document.getElementById("name").value
+				var email = document.getElementById("email").value
+				var message = document.getElementById("message").value
+
+				if (name == null || name == "") {
+	              alert("One or more mandatory fields are not filled. Please fill out all fields before submitting form");
+	              document.getElementById("name").style.borderColor = "red";
+	              return;
+	            }
+	            if (email == null || email == "") {
+	              alert("One or more mandatory fields are not filled. Please fill out all fields before submitting form");
+	              document.getElementById("email").style.borderColor = "red";
+	              return;
+	            }
+	            if (message == null || message == "") {
+	              alert("One or more mandatory fields are not filled. Please fill out all fields before submitting form");
+	              document.getElementById("message").style.borderColor = "red";
+	              return;
+	            }
+	            else {
+					window.open('mailto:torontoyouthmusicfund@gmail.com?subject=Get In Touch&body=' + "Name: " + name + "%0D%0A%0D%0AEmail: " + email + "%0D%0A%0D%0AMessage: " + message);
+	            }
+			};
+
+			function modal() {
+				$('#modal').modal();
+           		$('#modal').modal('open'); 
+			}
+			function modal1() {
+				$('#modal1').modal();
+           		$('#modal1').modal('open'); 
+			}
+			function modal2() {
+				$('#modal2').modal();
+           		$('#modal2').modal('open'); 
+			}
+			function modal3() {
+				$('#modal3').modal();
+           		$('#modal3').modal('open'); 
+			}
+			function modal4() {
+				$('#modal4').modal();
+           		$('#modal4').modal('open'); 
+			}
+			function modal5() {
+				$('#modal5').modal();
+           		$('#modal5').modal('open'); 
+			}
+    
     
 		</script>
 
