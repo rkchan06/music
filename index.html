@@ -29,11 +29,14 @@
 			</header>
 
 			<ul id="slide-out" class="sidenav">
-			    <li style="margin-top:60px;"><a onmouseover="drop()" onmouseout="close()" href="programs.html" style="font-size: 18px;">Our programs<i class="material-icons">account_balance</i></a></li>
-			    <li><a onclick="drop1()" href="events.html" style="font-size: 18px;">Events in the GTA<i class="material-icons">event</i></a></li>
-			    <li><a href="#!" style="font-size: 18px;">History of Music<i class="material-icons">history</i></a></li>
-			    <li><a onclick="drop2()" href="donations.html" style="font-size: 18px;">Donate Now<i class="material-icons">attach_money</i></a></li>
+			    <li style="margin-top:60px;"><a href="index.html" style="font-size: 18px;">Home<i class="material-icons">house</i></a></li>
+			    <li><a href="programs.html" style="font-size: 18px;">Programs<i class="material-icons">account_balance</i></a></li>
+			    <li><a href="events.html" style="font-size: 18px;">Events in the GTA<i class="material-icons">event</i></a></li>
+			    <li><a href="#!" onclick="notworking()" style="font-size: 18px;">History of Music<i class="material-icons">history</i></a></li>
+			    <li><a href="donations.html" style="font-size: 18px;">Donate Now<i class="material-icons">attach_money</i></a></li>
 			  </ul>
+			  
+			  
 			  
 
 
@@ -63,7 +66,7 @@
 								<center><img src="instrument11.png" style="margin-top:-120px;"/></center>
 								<header class="align-center">
 									<h2 style="margin-top:-70px;">About Us</h2>
-									<p style="margin-left:210px; margin-right: 210px; margin-bottom: -20px">With the Ontario Music Grant being cut by more than half, young students lack the musical education they require. Studies have shown that playing a musical instrument makes you smarter as it changes the shape and power of the brain, improving cognitive skills. Here at TYMF, we strive to empower youth with musical oppurtunities by raising funds for music programs as well as providing youth music programs and camps across the GTA.</p>
+									<p style="margin-left:210px; margin-right: 210px; margin-bottom: -20px">With the Ontario Music Grant being cut by more than half, young students lack the musical education they require. Studies have shown that playing a musical instrument makes you smarter as it changes the shape and power of the brain, improving cognitive skills. Here at TYMF, we strive to empower youth with musical opportunities by raising funds for music programs as well as providing youth music programs and camps across the GTA.</p>
 								</header>
 							</div>
 			</section>
@@ -150,33 +153,35 @@
 
 		<!-- Footer -->
 			<footer id="footer" class="wrapper">
+
 				<div class="inner">
-					<section>
-						<div class="box">
-							<div class="content">
-								<h2 class="align-center">Get in Touch</h2>
-								<hr />
-								<form action="#" method="post">
-									<div class="field half first">
-										<label for="name">Name</label>
-										<input name="name" id="name" type="text" placeholder="Name">
-									</div>
-									<div class="field half">
-										<label for="email">Email</label>
-										<input name="email" id="email" type="email" placeholder="Email">
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
-									</div>
-									<ul class="actions align-center">
-										<li><input value="Send Message" class="button special" type="submit"></li>
-									</ul>
-								</form>
-							</div>
-						</div>
-					</section>
+						<section>
+							<div class="box">
+								<div class="content">
+									<h2 class="align-center">Get in Touch</h2>
+									<hr />
+										<div class="field half first">
+											<label for="name">Name</label>
+											<input name="name" id="name" type="text" placeholder="Name" class="validate" required="" aria-required="true">
+											<span class="helper-text" data-error="Cannot be Empty" data-success=""></span>
+										</div>
+										<div class="field half">
+											<label for="email" style="margin-top:20px;">Email</label>
+											<input name="email" id="email" type="email" placeholder="Email" class="validate" required="" aria-required="true">
+											<span class="helper-text" data-error="Cannot be Empty/Not a valid Email" data-success=""></span>
+										</div>
+										<div class="field">
+											<label for="message" style="margin-top:20px;">Message</label>
+											<textarea name="message" id="message" rows="6" placeholder="Message" class="validate" required="" aria-required="true"></textarea>
+										</div>
+										<center><button onclick="emailme()" class="button special" style="margin-top:20px;">Send Message</button></center>
+								</div>
+							</div>	
+
+						</section>
 				</div>
+
+
 			</footer>
 
 		<!-- Scripts -->
@@ -196,6 +201,61 @@
 			$(window).scroll(function (event) {
 			    var scroll = $(window).scrollTop();
 			});
+
+			$(document).ready(function () {
+			    var val = $.trim($("textarea").val());
+			});
+
+			function checkName(){
+			    // Make AJAX request
+			    var name = document.getElementById("name").value
+				var email = document.getElementById("email").value
+				var message = document.getElementById("message").value
+			    
+			setTimeout(checkName, 10);
+			    
+			    if(name !== null && name !== '') {
+	             	document.getElementById("name").style.borderColor = "green";
+	              	return;
+	            }
+
+	            if(email !== null && email !== '') {
+	             	document.getElementById("email").style.borderColor = "green";
+	              	return;
+	            }
+
+	            
+			}
+			checkName();
+
+			function emailme() {
+				var name = document.getElementById("name").value
+				var email = document.getElementById("email").value
+				var message = document.getElementById("message").value
+
+				if (name == null || name == "") {
+	              alert("One or more mandatory fields are not filled. Please fill out all fields before submitting form");
+	              document.getElementById("name").style.borderColor = "red";
+	              return;
+	            }
+	            if (email == null || email == "") {
+	              alert("One or more mandatory fields are not filled. Please fill out all fields before submitting form");
+	              document.getElementById("email").style.borderColor = "red";
+	              return;
+	            }
+	            if (message == null || message == "") {
+	              alert("One or more mandatory fields are not filled. Please fill out all fields before submitting form");
+	              document.getElementById("message").style.borderColor = "red";
+	              return;
+	            }
+	            else {
+					window.open('mailto:torontoyouthmusicfund@gmail.com?subject=Get In Touch&body=' + "Name: " + name + "%0D%0A%0D%0AEmail: " + email + "%0D%0A%0D%0AMessage: " + message);
+	            }
+			};
+
+			function notworking() {
+				alert("Coming soon")
+			}
     
 		</script>
 
