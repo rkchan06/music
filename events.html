@@ -40,32 +40,64 @@
 	<body class="subpage">
 
 		<!-- Header -->
+		<div id="note" style="font-weight:bold;">Due to the COVID-19 pandemic, all recent scheduled events have been cancelled.<a id="close" style="float:right; margin-right: 20px; font-color:black; font-weight:bold; font-family: Arial, Helvetica, sans-serif;"><b>X</b></a></div>
 			<header id="header" class="alt">
-				<div class="logo"><a href="index.html" style="color:black;">Toronto Youth Music Fund<span></span></a></div>
-				<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons" style="margin-top:12px; color:black;">menu</i></a>
+				<a href="index.html" style="margin-right:20px; font-size:20px; margin-top:3px;">TYMF<span></span></a>
+				<a href="#" data-target="slide-out" class="sidenav-trigger left"><i class="material-icons" style="margin-top:12px; margin-left:10px; ">menu</i></a>
 			</header>
 
 			<ul id="slide-out" class="sidenav">
-			    <li style="margin-top:60px;"><a onmouseover="drop()" onmouseout="close()" href="programs.html" style="font-size: 18px;">Our programs<i class="material-icons"></i></a></li>
-
-			    <li><a onclick="drop1()" href="events.html" style="font-size: 18px;">Events<i class="material-icons">event</i></a></li>
-			    <li><a onclick="drop2()" href="donations.html" style="font-size: 18px;">Donations<i class="material-icons">attach_money</i></a></li>
-			    <li><a href="#!" style="font-size: 18px;">History of Music<i class="material-icons">history</i></a></li>
+			    <li style="margin-top:60px;"><a href="index.html" style="font-size: 18px;">Home<i class="material-icons">house</i></a></li>
+			    <li><a href="programs.html" style="font-size: 18px;">Programs<i class="material-icons">account_balance</i></a></li>
+			    <li><a href="events.html" style="font-size: 18px;">Events in the GTA<i class="material-icons">event</i></a></li>
+			    <li><a href="#!" onclick="notworking()" style="font-size: 18px;">History of Music<i class="material-icons">history</i></a></li>
+			    <li><a href="donations.html" style="font-size: 18px;">Donate Now<i class="material-icons">attach_money</i></a></li>
 			  </ul>
 
-			  <center><h1>Events around the GTA</h1></center>
+			  <section id="banner" style="margin-top:-500px;">
+					<div class="inner">
+						<div id="home" class="animated1 slideInDown">
 
-			  <div class="row" style="margin-top:50px;">
-			  <div class="column">
-			    <img src="tree.jpg" alt="Snow" style="width:100%"><button>Learn More</button><p>This is where the captions of events would go</p>
-			  </div>
-			  <div class="column">
-			    <img src="autumn.jpg" alt="Forest" style="width:100%"><button>Learn More</button><p>This is where the captions of events would go</p>
-			  </div>
-			  <div class="column">
-			    <img src="spring.jpg" alt="Mountains" style="width:100%"><button>Learn More</button><p>This is where the captions of events would go</p>
-			  </div>
-			</div>
+							<h1 style="margin-top:450px;">Events around the GTA</h1>
+							<center><img src="bluemusic.png" style="width:75px; height: 75px;"></center>
+
+						</div>
+					</div>
+				</section>
+
+
+			<footer id="footer" class="wrapper">
+
+				<div class="inner">
+						<section>
+							<div class="box">
+								<div class="content">
+									<h2 class="align-center">Get in Touch</h2>
+									<hr />
+										<div class="field half first">
+											<label for="name">Name</label>
+											<input name="name" id="name" type="text" placeholder="Name" class="validate" required="" aria-required="true">
+											<span class="helper-text" data-error="Cannot be Empty" data-success=""></span>
+										</div>
+										<div class="field half">
+											<label for="email" style="margin-top:20px;">Email</label>
+											<input name="email" id="email" type="email" placeholder="Email" class="validate" required="" aria-required="true">
+											<span class="helper-text" data-error="Cannot be Empty/Not a valid Email" data-success=""></span>
+										</div>
+										<div class="field">
+											<label for="message" style="margin-top:20px;">Message</label>
+											<textarea name="message" id="message" rows="6" placeholder="Message" class="validate" required="" aria-required="true"></textarea>
+										</div>
+										<center><button onclick="emailme()" class="button special" style="margin-top:20px;">Send Message</button></center>
+								</div>
+							</div>	
+
+						</section>
+				</div>
+
+
+			</footer>
+            
 
 		<!-- One -->
 		
@@ -85,9 +117,100 @@
 			    $('.sidenav').sidenav();
 			});
 
+			
 			$(window).scroll(function (event) {
 			    var scroll = $(window).scrollTop();
 			});
+
+			$(document).ready(function(){
+      $('.sidenav').sidenav();
+      });
+
+      $(window).scroll(function (event) {
+          var scroll = $(window).scrollTop();
+      });
+
+      $(document).ready(function () {
+          var val = $.trim($("textarea").val());
+      });
+
+      function checkName(){
+          // Make AJAX request
+          var name = document.getElementById("name").value
+        var email = document.getElementById("email").value
+        var message = document.getElementById("message").value
+          
+      setTimeout(checkName, 10);
+          
+          if(name !== null && name !== '') {
+                document.getElementById("name").style.borderColor = "green";
+                  return;
+              }
+
+              if(email !== null && email !== '') {
+                document.getElementById("email").style.borderColor = "green";
+                  return;
+              }
+
+              
+      }
+      checkName();
+
+      function emailme() {
+        var name = document.getElementById("name").value
+        var email = document.getElementById("email").value
+        var message = document.getElementById("message").value
+
+        if (name == null || name == "") {
+                alert("One or more mandatory fields are not filled. Please fill out all fields before submitting form");
+                document.getElementById("name").style.borderColor = "red";
+                return;
+              }
+              if (email == null || email == "") {
+                alert("One or more mandatory fields are not filled. Please fill out all fields before submitting form");
+                document.getElementById("email").style.borderColor = "red";
+                return;
+              }
+              if (message == null || message == "") {
+                alert("One or more mandatory fields are not filled. Please fill out all fields before submitting form");
+                document.getElementById("message").style.borderColor = "red";
+                return;
+              }
+              else {
+          window.open('mailto:torontoyouthmusicfund@gmail.com?subject=Get In Touch&body=' + "Name: " + name + "%0D%0A%0D%0AEmail: " + email + "%0D%0A%0D%0AMessage: " + message);
+              }
+      };
+
+      function modal() {
+        $('#modal').modal();
+              $('#modal').modal('open'); 
+      }
+      function modal1() {
+        $('#modal1').modal();
+              $('#modal1').modal('open'); 
+      }
+      function modal2() {
+        $('#modal2').modal();
+              $('#modal2').modal('open'); 
+      }
+      function modal3() {
+        $('#modal3').modal();
+              $('#modal3').modal('open'); 
+      }
+      function modal4() {
+        $('#modal4').modal();
+              $('#modal4').modal('open'); 
+      }
+      function modal5() {
+        $('#modal5').modal();
+              $('#modal5').modal('open'); 
+      }
+
+      close = document.getElementById("close");
+ close.addEventListener('click', function() {
+   note = document.getElementById("note");
+   note.style.display = 'none';
+ }, false);
     
 		</script>
 	</body>
