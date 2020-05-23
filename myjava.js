@@ -4,7 +4,7 @@ function scrolly() {
 		if (scroll12 > 700){
 			document.getElementById("home").className = "animated1 slideInDown"
 		}
-	});
+});
 }
 scrolly()
 
@@ -39,3 +39,7 @@ function close() {
 	document.getElementById("drop").style.display = 'none';
 	console.log("hi")
 }
+function notworking() {
+        alert("Coming soon")
+      }
+
