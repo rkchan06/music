@@ -14,11 +14,6 @@
 		<script src="myjava.js"></script>
 
 	</head>
-	<style>
-		body {
-			background-color: black;
-		}
-	</style>
 
 	<body>
 
@@ -29,40 +24,84 @@
 			</header>
 
 			<ul id="slide-out" class="sidenav">
-			    <li style="margin-top:60px;"><a onmouseover="drop()" onmouseout="close()" href="programs.html" style="font-size: 18px;">Our programs<i class="material-icons">account_balance</i></a></li>
-			    <li><a onclick="drop1()" href="events.html" style="font-size: 18px;">Events in the GTA<i class="material-icons">event</i></a></li>
-			    <li><a href="#!" style="font-size: 18px;">History of Music<i class="material-icons">history</i></a></li>
-			    <li><a onclick="drop2()" href="donations.html" style="font-size: 18px;">Donate Now<i class="material-icons">attach_money</i></a></li>
+			    <li style="margin-top:60px;"><a href="index.html" style="font-size: 18px;">Home<i class="material-icons">house</i></a></li>
+			    <li><a href="programs.html" style="font-size: 18px;">Programs<i class="material-icons">account_balance</i></a></li>
+			    <li><a href="events.html" style="font-size: 18px;">Events in the GTA<i class="material-icons">event</i></a></li>
+			    <li><a href="#!" onclick="notworking()" style="font-size: 18px;">History of Music<i class="material-icons">history</i></a></li>
+			    <li><a href="donations.html" style="font-size: 18px;">Donate Now<i class="material-icons">attach_money</i></a></li>
 			  </ul>
+			  
+			 <section id="banner" class="animated1 fadeIn">
+					<div class="inner">
+						<div style="margin-left:100px; float:left; margin-top: 160px;">
+							<img src="bluemusic.png" style="width:75px; height: 75px;">
+							<h1 style="margin-bottom:30px;">Donate Now</h1>
+							<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+							<input type="hidden" name="cmd" value="_s-xclick" />
+							<input type="hidden" name="hosted_button_id" value="Z262Y36AG4GSA" />
+							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" style="width:200px; height:70px;"/>
+							<img alt="" border="0" src="https://www.paypal.com/en_CA/i/scr/pixel.gif" width="1" height="1" />
+							</form>
+						</div>
+						<div style="float: right">
+							<img src="bar.png" style="margin-left: 200px;">
+							<img src="jazzy.png" style="margin-left: 150px; margin-bottom:200px !important;">
+						</div>
 
-			<center><h1 style="margin-top:100px; color:white;">Donate Now!</h1></center>
-			<center><div id="paypal-button-container"></div></center>
-				<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=CAD" data-sdk-integration-source="button-factory"></script>
-				<script>
-				  paypal.Buttons({
-				      style: {
-				          shape: 'pill',
-				          color: 'gold',
-				          layout: 'vertical',
-				          label: 'paypal',
-				          
-				      },
-				      createOrder: function(data, actions) {
-				          return actions.order.create({
-				              purchase_units: [{
-				                  amount: {
-				                      value: '1'
-				                  }
-				              }]
-				          });
-				      },
-				      onApprove: function(data, actions) {
-				          return actions.order.capture().then(function(details) {
-				              alert('Transaction completed by ' + details.payer.name.given_name + '!');
-				          });
-				      }
-				  }).render('#paypal-button-container');
-				</script>
+					</div>
+			</section>
+
+			<div style="margin-top:50px; margin-left:150px; margin-right:150px;">
+				<p>With the Ontario Music Grant being cut by more than half, young students lack the musical education they require. Studies have shown that playing a musical instrument makes you smarter as it changes the shape and power of the brain, improving cognitive skills.</p>
+
+				<p>Our mission is to provide musical opportunites and support these music programs around the GTA in order to improve the accessibility to music for youth.  Your donation allows us to help provide these programs and support local music activities and charities. All donations help and are greatly appreciated.</p>
+			</div>
+
+			<center><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+			<input type="hidden" name="cmd" value="_s-xclick" />
+			<input type="hidden" name="hosted_button_id" value="V5T7CSQWSRY36" />
+			<input type="image" src="https://raw.githubusercontent.com/rkchan06/music/master/Screen%20Shot%202020-05-22%20at%208.00.02%20PM.png" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" style="width:200px; height:45px;" />
+			<img alt="" border="0" src="https://www.paypal.com/en_CA/i/scr/pixel.gif" width="1" height="1"/>
+			</form></center>
+
+
+
+
+
+
+			<footer id="footer" class="wrapper">
+
+				<div class="inner">
+						<section>
+							<div class="box">
+								<div class="content">
+									<h2 class="align-center">Get in Touch</h2>
+									<hr />
+										<div class="field half first">
+											<label for="name">Name</label>
+											<input name="name" id="name" type="text" placeholder="Name" class="validate" required="" aria-required="true">
+											<span class="helper-text" data-error="Cannot be Empty" data-success=""></span>
+										</div>
+										<div class="field half">
+											<label for="email" style="margin-top:20px;">Email</label>
+											<input name="email" id="email" type="email" placeholder="Email" class="validate" required="" aria-required="true">
+											<span class="helper-text" data-error="Cannot be Empty/Not a valid Email" data-success=""></span>
+										</div>
+										<div class="field">
+											<label for="message" style="margin-top:20px;">Message</label>
+											<textarea name="message" id="message" rows="6" placeholder="Message" class="validate" required="" aria-required="true"></textarea>
+										</div>
+										<center><button onclick="emailme()" class="button special" style="margin-top:20px;">Send Message</button></center>
+								</div>
+							</div>	
+
+						</section>
+				</div>
+
+
+			</footer>
+
+
 
 	</body>
 			<script src="assets/js/jquery.min.js"></script>
@@ -81,7 +120,58 @@
 			$(window).scroll(function (event) {
 			    var scroll = $(window).scrollTop();
 			});
+
+			$(document).ready(function () {
+			    var val = $.trim($("textarea").val());
+			});
+
+			function checkName(){
+			    // Make AJAX request
+			    var name = document.getElementById("name").value
+				var email = document.getElementById("email").value
+				var message = document.getElementById("message").value
+			    
+			setTimeout(checkName, 10);
+			    
+			    if(name !== null && name !== '') {
+	             	document.getElementById("name").style.borderColor = "green";
+	              	return;
+	            }
+
+	            if(email !== null && email !== '') {
+	             	document.getElementById("email").style.borderColor = "green";
+	              	return;
+	            }
+
+	            
+			}
+			checkName();
+
+			function emailme() {
+				var name = document.getElementById("name").value
+				var email = document.getElementById("email").value
+				var message = document.getElementById("message").value
+
+				if (name == null || name == "") {
+	              alert("One or more mandatory fields are not filled. Please fill out all fields before submitting form");
+	              document.getElementById("name").style.borderColor = "red";
+	              return;
+	            }
+	            if (email == null || email == "") {
+	              alert("One or more mandatory fields are not filled. Please fill out all fields before submitting form");
+	              document.getElementById("email").style.borderColor = "red";
+	              return;
+	            }
+	            if (message == null || message == "") {
+	              alert("One or more mandatory fields are not filled. Please fill out all fields before submitting form");
+	              document.getElementById("message").style.borderColor = "red";
+	              return;
+	            }
+	            else {
+					window.open('mailto:torontoyouthmusicfund@gmail.com?subject=Get In Touch&body=' + "Name: " + name + "%0D%0A%0D%0AEmail: " + email + "%0D%0A%0D%0AMessage: " + message);
+	            }
+			};
+    
     
 		</script>
 </html>
-
